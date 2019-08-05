@@ -8,4 +8,4 @@
 
 export { setErrors } from "./errors";
 
-export { filterShows } from "./shows";
+export { filterShows, getShowDetail } from "./shows";

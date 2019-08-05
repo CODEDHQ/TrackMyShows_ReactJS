@@ -2,16 +2,21 @@ import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 //Components
-// import ShowsList from "./Components/ShowsList";
+import ShowDetail from "./Components/ShowDetail";
 import HomePage from "./Components/HomePage";
+import TopNavBar from "./Components/TopNavBar";
 
 function App() {
   return (
-    <Switch>
-      <Route path="/home" component={HomePage} />
-      {/* <Route path="/showsList" component={ShowsList} /> */}
-      <Redirect to="/home" />
-    </Switch>
+    <div>
+      <TopNavBar />
+
+      <Switch>
+        <Route path="/home" component={HomePage} />
+        <Route path="/show/:showID" component={ShowDetail} />
+        <Redirect to="/home" />
+      </Switch>
+    </div>
   );
 }
 

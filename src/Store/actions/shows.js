@@ -6,3 +6,10 @@ export const filterShows = query => {
     payload: query
   };
 };
+
+export const getShowDetail = showID => {
+  return {
+    type: actionTypes.GET_SHOW_DETAIL,
+    payload: showID
+  };
+};
