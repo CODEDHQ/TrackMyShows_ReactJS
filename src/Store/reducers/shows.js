@@ -4,7 +4,9 @@ import shows from "../../data";
 const initialState = {
   shows: shows,
   filteredShows: shows,
-  selectedShow: { name: 2 },
+  selectedShow: {},
+  seasons: [],
+  episodes: [],
   loading: true
 };
 
@@ -20,9 +22,8 @@ const reducer = (state = initialState, action) => {
     case actionTypes.GET_SHOW_DETAIL:
       return {
         ...state,
-        selectedShow: state.shows.find(show => {
-          return show.id === +action.payload;
-        }),
+        selectedShow: state.shows.find(show => show.id === +action.payload),
+        seasons: state.shows.find(show => show.id === +action.payload).seasons,
         loading: false
       };
     default:

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // Components
-// import Episodes from "./Episodes";
+import Seasons from "./Seasons";
 import Loading from "./Loading";
 
 import { connect } from "react-redux";
@@ -18,16 +18,23 @@ class ShowDetail extends Component {
       const show = this.props.show;
       const showName = `${show.name}`;
       return (
-        <div className="">
-          <div>
-            <h3>{showName}</h3>
-            <img
-              src={show.image.original}
-              className="img-thumbnail img-fluid"
-              alt={showName}
-            />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col">
+              <h3>{showName}</h3>
+              <img
+                src={show.image.original}
+                className="img-thumbnail img-fluid"
+                alt={showName}
+              />
+            </div>
+            <div className="col">
+              <h3>Summary:</h3>
+              <p>{show.summary}</p>
+              <h3>Seasons:</h3>
+              <Seasons seasons={this.props.seasons} />
+            </div>
           </div>
-          {/* <Episodes episodes={show._embedded.episodes} /> */}
         </div>
       );
     }
@@ -37,6 +44,7 @@ class ShowDetail extends Component {
 const mapStateToProps = state => {
   return {
     show: state.shows.selectedShow,
+    seasons: state.shows.seasons,
     loading: state.shows.loading
   };
 };
