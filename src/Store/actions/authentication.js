@@ -48,9 +48,8 @@ export const login = (userData, history) => {
       let decodedUser = jwt_decode(user.token);
       setAuthToken(user.token);
       dispatch(setCurrentUser(decodedUser));
-      history.push("/home");
+      history.goBack();
     } catch (error) {
-      //   console.log(error.response.data);
       dispatch(setErrors(error.response.data));
     }
   };
@@ -61,7 +60,6 @@ export const signup = (userData, history) => {
     try {
       await instance.post("/signup/", userData);
     } catch (error) {
-      //   console.log(error.response.data);
       dispatch(setErrors(error.response.data));
     }
     dispatch(login(userData, history));

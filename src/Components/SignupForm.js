@@ -36,7 +36,6 @@ class SignupForm extends Component {
                   id="username"
                   value={username}
                   name="username"
-                  placeholder="Username"
                   onChange={this.handleChange}
                 />
               </div>
@@ -48,7 +47,6 @@ class SignupForm extends Component {
                   id="email"
                   value={email}
                   name="email"
-                  placeholder="Email"
                   onChange={this.handleChange}
                 />
               </div>
@@ -60,7 +58,6 @@ class SignupForm extends Component {
                   id="password"
                   value={password}
                   name="password"
-                  placeholder="Password"
                   onChange={this.handleChange}
                 />
               </div>

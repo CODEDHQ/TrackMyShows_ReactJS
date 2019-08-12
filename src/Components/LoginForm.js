@@ -35,7 +35,6 @@ class LoginForm extends Component {
                   id="username"
                   value={username}
                   name="username"
-                  placeholder="Username"
                   onChange={this.handleChange}
                 />
               </div>
@@ -47,7 +46,6 @@ class LoginForm extends Component {
                   id="password"
                   value={password}
                   name="password"
-                  placeholder="Password"
                   onChange={this.handleChange}
                 />
               </div>

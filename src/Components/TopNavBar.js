@@ -15,17 +15,20 @@ class TopNavBar extends Component {
         <div>
           {!this.props.user ? (
             <div className="float-right">
-              <Link to="/login" className="btn btn-info m-2">
+              <Link to="/login" className="btn btn-link">
                 Login
               </Link>
-              <Link to="/signup" className="btn btn-success m-2">
+              <Link to="/signup" className="btn btn-link">
                 Signup
               </Link>
             </div>
           ) : (
-            <button className="btn btn-danger m-2 " onClick={this.props.logout}>
-              Logout {this.props.user.username}
-            </button>
+            <div>
+              <span>{this.props.user.username}</span>
+              <button className="btn btn-link" onClick={this.props.logout}>
+                Logout
+              </button>
+            </div>
           )}
         </div>
       </nav>
