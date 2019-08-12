@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+
+//Components
 import ShowCard from "./ShowCard";
 
+//Redux
 import { connect } from "react-redux";
 
 class ShowsList extends Component {
   render() {
-    console.log(this.props.filteredShows);
     let showCards = this.props.filteredShows.map(show => (
       <ShowCard show={show} key={show.id} />
     ));

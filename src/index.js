@@ -15,6 +15,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import store from "./Store";
 import { Provider } from "react-redux";
 
+//Auth
+import { checkForExpiredToken } from "./Store/actions/authentication";
+
+store.dispatch(checkForExpiredToken());
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -25,8 +30,3 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
-
-/////////////////
-// import { checkForExpiredToken } from "./Store/actions/authentication";
-
-// store.dispatch(checkForExpiredToken());

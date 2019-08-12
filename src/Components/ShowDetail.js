@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Seasons from "./Seasons";
 import Loading from "./Loading";
 
+//Redux
 import { connect } from "react-redux";
 import * as actionCreators from "../Store/actions";
 

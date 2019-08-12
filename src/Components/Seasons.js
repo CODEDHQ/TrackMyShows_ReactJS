@@ -1,15 +1,14 @@
 import React from "react";
+import { Accordion } from "react-bootstrap";
+
+//Components
 import SeasonRow from "./SeasonRow";
 
 function Seasons(props) {
-  let rows = props.seasons.map((season, id = 1) => (
-    <SeasonRow season={season} key={season[0].id} id={season[0].id} />
+  let rows = props.seasons.map((season, i) => (
+    <SeasonRow season={season} key={season[0].id} id={i} />
   ));
-  return (
-    <div className="accordion" id="accordionExample">
-      {rows}
-    </div>
-  );
+  return <Accordion defaultActiveKey="0">{rows}</Accordion>;
 }
 
 export default Seasons;

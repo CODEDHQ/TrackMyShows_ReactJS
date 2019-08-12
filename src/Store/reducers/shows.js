@@ -6,7 +6,7 @@ const initialState = {
   filteredShows: shows,
   selectedShow: {},
   seasons: [],
-  episodes: [],
+  // episodes: [],
   loading: true
 };
 

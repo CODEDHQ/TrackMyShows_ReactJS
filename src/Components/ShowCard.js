@@ -13,14 +13,6 @@ function ShowCard(props) {
         <div className="card-body">
           <h5 className="card-title">{props.show.name}</h5>
           <p className="card-text">{props.show.summary}</p>
-          {/* <a
-            href={props.show.url}
-            target="_blank"
-            className="btn btn-primary"
-            rel="noopener noreferrer"
-          >
-            Go somewhere
-          </a> */}
           <Link className="btn btn-md btn-info" to={`/show/${props.show.id}`}>
             More
           </Link>
