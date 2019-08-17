@@ -9,6 +9,10 @@ import EpisodeDetail from "./Components/EpisodeDetail";
 import SignupForm from "./Components/SignupForm";
 import LoginForm from "./Components/LoginForm";
 
+//Data
+import shows from "./Data/shows";
+import episodes from "./Data/episodes";
+
 function App() {
   return (
     <div>
@@ -16,8 +20,14 @@ function App() {
 
       <Switch>
         <Route path="/home" component={HomePage} />
-        <Route path="/show/:showID" component={ShowDetail} />
-        <Route path="/episode/:episodeID" component={EpisodeDetail} />
+        <Route
+          path="/show/:showID"
+          render={props => <ShowDetail {...props} shows={shows} />}
+        />
+        <Route
+          path="/episode/:episodeID"
+          render={props => <EpisodeDetail {...props} episodes={episodes} />}
+        />
         <Route path="/signup" component={SignupForm} />
         <Route path="/login" component={LoginForm} />
         <Redirect to="/home" />

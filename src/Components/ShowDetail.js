@@ -4,19 +4,31 @@ import React, { Component } from "react";
 import Seasons from "./Seasons";
 import Loading from "./Loading";
 
-//Redux
-import { connect } from "react-redux";
-import * as actionCreators from "../Store/actions";
-
 class ShowDetail extends Component {
+  state = {
+    selectedShow: null,
+    loading: true
+  };
+
   componentDidMount() {
-    this.props.getShow(this.props.match.params.showID);
+    this.getShow(this.props.match.params.showID);
   }
+
+  getShow(showID) {
+    const show = this.props.shows.find(show => show.id === +showID);
+    if (show) {
+      this.setState({
+        selectedShow: show,
+        loading: false
+      });
+    }
+  }
+
   render() {
-    if (this.props.loading) {
+    if (this.state.loading) {
       return <Loading />;
     } else {
-      const show = this.props.show;
+      const show = this.state.selectedShow;
       const showName = `${show.name}`;
       return (
         <div className="container-fluid">
@@ -33,7 +45,7 @@ class ShowDetail extends Component {
               <h3>Summary:</h3>
               <p>{show.summary}</p>
               <h3>Seasons:</h3>
-              <Seasons seasons={this.props.seasons} />
+              <Seasons seasons={show.seasons} />
             </div>
           </div>
         </div>
@@ -42,21 +54,4 @@ class ShowDetail extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    show: state.shows.selectedShow,
-    seasons: state.shows.seasons,
-    loading: state.shows.loading
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getShow: showID => dispatch(actionCreators.getShowDetail(showID))
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowDetail);
+export default ShowDetail;
