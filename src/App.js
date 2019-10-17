@@ -17,7 +17,7 @@ function App() {
       <TopNavBar />
 
       <Switch>
-        <Route path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Route
           path="/show/:showID"
           render={props => <ShowDetail {...props} shows={shows} />}
