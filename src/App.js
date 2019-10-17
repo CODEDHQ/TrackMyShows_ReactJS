@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 //Components
 import ShowDetail from "./Components/ShowDetail";
@@ -17,7 +17,7 @@ function App() {
       <TopNavBar />
 
       <Switch>
-        <Route path="/home" component={HomePage} />
+        <Route path="/" component={HomePage} />
         <Route
           path="/show/:showID"
           render={props => <ShowDetail {...props} shows={shows} />}
@@ -26,10 +26,10 @@ function App() {
           path="/episode/:episodeID"
           render={props => <EpisodeDetail {...props} episodes={episodes} />}
         />
-        <Redirect to="/home" />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
 }
 
-export default withRouter(App);
+export default App;

@@ -8,7 +8,7 @@ function Seasons(props) {
   let rows = props.seasons.map((season, i) => (
     <SeasonRow season={season} key={season[0].id} id={i} />
   ));
-  return <Accordion defaultActiveKey="0">{rows}</Accordion>;
+  return <Accordion>{rows}</Accordion>;
 }
 
 export default Seasons;
