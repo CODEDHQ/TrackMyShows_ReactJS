@@ -5,7 +5,7 @@ class TopNavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <Link className="navbar-brand" to="/home">
+        <Link className="navbar-brand" to="/">
           HOME
         </Link>
       </nav>
