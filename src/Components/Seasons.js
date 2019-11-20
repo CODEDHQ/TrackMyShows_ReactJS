@@ -4,8 +4,9 @@ import { Accordion } from "react-bootstrap";
 //Components
 import SeasonRow from "./SeasonRow";
 
-function Seasons(props) {
-  let rows = props.seasons.map((season, i) => (
+function Seasons({ seasons }) {
+  //Khalid Prop extraction
+  let rows = seasons.map((season, i) => (
     <SeasonRow season={season} key={season[0].id} id={i} />
   ));
   return <Accordion>{rows}</Accordion>;
