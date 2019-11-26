@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ShowCard({ show }) {
-  // Khalid Since you are only using one prop you can do that
   return (
     <div className="col-lg-4 col-md-6 col-12">
       <div className="card">

@@ -5,7 +5,6 @@ import { Accordion } from "react-bootstrap";
 import SeasonRow from "./SeasonRow";
 
 function Seasons({ seasons }) {
-  //Khalid Prop extraction
   let rows = seasons.map((season, i) => (
     <SeasonRow season={season} key={season[0].id} id={i} />
   ));

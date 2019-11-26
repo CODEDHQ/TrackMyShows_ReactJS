@@ -14,11 +14,10 @@ class SearchBar extends Component {
     return (
       <div className="form-group col-lg-6 col-12 mx-auto">
         <div className="input-group my-3">
-          {/* Khalid Value= this.state.query? */}
           <input
             className="form-control"
             type="text"
-            value={this.state.value}
+            value={this.state.query}
             onChange={this.handleChange}
           />
           <div className="input-group-append">

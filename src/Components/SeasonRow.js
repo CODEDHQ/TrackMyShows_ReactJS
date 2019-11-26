@@ -5,7 +5,6 @@ import { Accordion, Card, Button } from "react-bootstrap";
 import Episodes from "./Episodes";
 
 function SeasonRow({ season, id }) {
-  // Khalid extraction of 2 props
   return (
     <Card>
       <Card.Header>
