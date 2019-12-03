@@ -44,7 +44,7 @@ class ShowDetail extends Component {
             <div className="col">
               <h3>Summary:</h3>
               <p>{show.summary}</p>
-              <h3>Seasons:</h3>
+              <h3>Seasons ({show.seasons.length}):</h3>
               <Seasons seasons={show.seasons} />
             </div>
           </div>
